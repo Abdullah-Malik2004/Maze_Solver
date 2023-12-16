@@ -206,7 +206,7 @@ class MazeApp(tk.Tk):
                                 frontier.append(next_cell)
                                 visited.add(next_cell)
 
-                    self._canvas.after(60, lambda: self.DFSAnimation(cell=cell, frontier=frontier, visited=visited,
+                    self._canvas.after(20, lambda: self.DFSAnimation(cell=cell, frontier=frontier, visited=visited,
                                                                      path=path, t1=t1))
                 else:
                     self.animate(DFS=True, path=path, t1=t1)
@@ -299,7 +299,7 @@ class MazeApp(tk.Tk):
                         frontier.append(nextCell)
                         visited.add(nextCell)
 
-                    self._canvas.after(60, lambda: self.BFSAnimation(cell=cell, frontier=frontier, visited=visited,
+                    self._canvas.after(20, lambda: self.BFSAnimation(cell=cell, frontier=frontier, visited=visited,
                                                                      path=path, t1=t1))
                 else:
                     self.animate(BFS=True, path=path, t1=t1)
@@ -359,7 +359,7 @@ class MazeApp(tk.Tk):
                                     fill='blue', outline='black', width=2
                                 )
                                 self.rectangle_ids.append(rectangle_id)
-                    self._canvas.after(60, lambda: self.aStarSekci(path=path, t1=t1,start=start,g_score=g_score,f_score=f_score,open=open))
+                    self._canvas.after(20, lambda: self.aStarSekci(path=path, t1=t1,start=start,g_score=g_score,f_score=f_score,open=open))
                 else:
                     self.animate(AStar=True,path=path,t1=t1)
 
@@ -485,11 +485,11 @@ class MazeApp(tk.Tk):
             self.rectangle_ids.append(rectangle_id)
             # Schedule the next iteration after 100 milliseconds
             if (BFS == True):
-                self._canvas.after(60, lambda: self.animate(cell=nextCell, fwdPath=fwdPath, BFS=True, path=path, t1=t1))
+                self._canvas.after(20, lambda: self.animate(cell=nextCell, fwdPath=fwdPath, BFS=True, path=path, t1=t1))
             if (DFS == True):
-                self._canvas.after(60, lambda: self.animate(cell=nextCell, fwdPath=fwdPath, DFS=True, path=path, t1=t1))
+                self._canvas.after(20, lambda: self.animate(cell=nextCell, fwdPath=fwdPath, DFS=True, path=path, t1=t1))
             if (AStar == True):
-                self._canvas.after(60, lambda: self.animate(cell=nextCell, fwdPath=fwdPath, AStar=True, path=path, t1=t1))
+                self._canvas.after(20, lambda: self.animate(cell=nextCell, fwdPath=fwdPath, AStar=True, path=path, t1=t1))
 
         def drawMaze(self):
 
